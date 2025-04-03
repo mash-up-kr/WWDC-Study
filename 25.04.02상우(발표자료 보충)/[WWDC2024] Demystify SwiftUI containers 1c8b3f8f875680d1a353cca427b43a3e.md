@@ -10,19 +10,20 @@ Container View는 Trailing View Builder Closure로 콘텐츠를 래핑합니다.
 
 ## List 기본 사용법
 
----
 
 ### 클로저에 하드코딩 하는 방법 (정적)
 
+
 ```swift
 List {
-		Text("Scrolling in the Deep")
+	Text("Scrolling in the Deep")
     Text("Born to Build & Run")
     Text("Some Body Like View")
 }
 ```
 
-![스크린샷 2025-04-01 오후 11.08.49.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-01_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.08.49.png)
+<img src = "./images/image1.png" width = "200">
+
 
 ### 배열과 ForEach를 사용하는 방법 (동적)
 
@@ -45,11 +46,11 @@ List {
 }
 ```
 
-![스크린샷 2025-04-01 오후 11.15.16.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-01_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.15.16.png)
+<img src = "./images/image2.png" width="200">
+
 
 ## List 고급?기능
 
----
 
 ### 섹션으로 그룹화
 
@@ -72,7 +73,7 @@ List {
 
 .listRowSeparator(.hidden) 수정자를 사용해 구분자를 숨기거나 변경하는 것도 가능합니다.
 
-![스크린샷 2025-04-01 오후 11.16.22.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-01_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.16.22.png)
+<img src = "./images/image3.png" width="200">
 
 ## 유연한 커스텀 컨테이너 뷰 만들기
 
@@ -133,7 +134,7 @@ CardView와
 
 DisplayBoardView로 이루어져 있습니다.
 
-![스크린샷 2025-04-01 오후 11.48.40.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-01_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.48.40.png)
+<img src = "./images/image4.png" width="400">
 
 ```swift
 struct DisplayBoard<Data: RandomAccessCollection, Content: View>: View
@@ -218,22 +219,16 @@ DisplayBoard {
 }
 ```
 
-- **질문3.** 위 DisplayBoard의 하위뷰는 몇 개 일까요??
+Q. 위 DisplayBoard의 하위뷰는 몇 개 일까요??
     
-    상황에 따라 다릅니다.
-    최상단 레벨에서 보면 4개 - 선언형 하위 보기(**Declarative subview)**
-    12개 - 해결된 하위 보기 (**Resolved subviews)**
+A. 상황에 따라 다릅니다. <br>
+선언형 하위 뷰(**Declarative subview) - 4개**<br>
+해결된 하위 뷰 (**Resolved subviews) - 12개**
     
-
-.
-
-.
-
-.
-
 두 가지 SubView의 차이점을 이해하는 것이 중요합니다.
 
-![스크린샷 2025-04-02 오전 12.26.49.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.26.49.png)
+<img src = "./images/image5.png" width="500">
+
 
 SwiftUI의 선언형 시스템에서 **Declarative subview는 SwiftUI 앱이 실행되는 동안 Resolved subviews를 생성하기 위한 방법을 정의 합니다.**
 
@@ -257,11 +252,11 @@ Text("Born to Build & Run")
 Text("Some Body Like View")
 ```
 
-![스크린샷 2025-04-02 오전 1.00.06.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.00.06.png)
+<img src = "./images/image5.png" width="400">
 
 Empty View같은 일부 **Declarative subview의 경우 Resolved subview를 하나도 생성하지 않을 수 있습니다.**
 
-![스크린샷 2025-04-02 오전 1.01.01.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.01.01.png)
+<img src = "./images/image6.png" width="400">
 
 또는 조건부로 다른 개수의 하위 보기로 해결될 수 있습니다 if 구문의 다양한 분기문처럼요
 
@@ -269,7 +264,7 @@ Empty View같은 일부 **Declarative subview의 경우 Resolved subview를 하�
 
 ### ✅iOS 18 New API - Group(subviewOf:)
 
-![스크린샷 2025-04-02 오전 1.03.26.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.03.26.png)
+<img src = "./images/image7.png" width="400">
 
 유연한 구조로 바꿨더니 추가가 너무 쉬워서 카드가 너무 많아졌습니다. 보기가 어려워요!!
 
@@ -298,7 +293,7 @@ var body: some View {
 
 ## Section
 
-![스크린샷 2025-04-02 오전 1.13.38.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.13.38.png)
+<img src = "./images/image8.png" width="400">
 
 개수가 많아지면 작아져서 카드가 이전보다 덜 겹치긴 하나 여전히 정리되지 않은 느낌입니다.
 
@@ -383,7 +378,7 @@ var body: some View {
 
 ForEach(sectionOf:)는 ForEach(subviewOf:)와 마찬가지로 View를 입력으로 받고 View 내에 감지되는 각 Section을 반복하면서 ViewBuild에 Section Configuration을 제공합니다.
 
-![스크린샷 2025-04-02 오전 1.34.37.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.34.37.png)
+<img src = "./images/image9.png" width="400">
 
 1. Header를 추가합니다.
 
@@ -408,7 +403,7 @@ var body: some View {
 }
 ```
 
-![스크린샷 2025-04-02 오전 1.36.46.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.36.46.png)
+<img src = "./images/image10.png" width="400">
 
 사용은 단순합니다.
 
@@ -432,33 +427,41 @@ List {
 
 .listRowSeparator(.hidden)같은 커스텀할 수 있는 기능을 제공해봅시다. 우리는 부르지 않기로 결정한 노래는 줄을 그어 표시해주고 싶습니다. 이럴때 컨테이너별 한정자를 빌드하기 위한 새 API가 있습니다. 
 
-### ✅ iOS 18 New API - Container Value
+### ✅ iOS 18 New API - Container Value [공식문서](https://developer.apple.com/documentation/swiftui/containervalues)
 
 **Container Value는 Environment 및 Preferences와 유사한 키 저장소 값입니다.**
 
-![스크린샷 2025-04-02 오전 1.43.24.png](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.43.24.png)
+Preference values와 Environment values, Container values 각각의 값의 흐름을 비교하며 Container Values가 어떤 키 저장소이고 어떤때에 사용하면 좋을지 알아보겠습니다.
 
-![값을 하위로 전달](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.44.11.png)
+아래와 같은 구조의 뷰 일때
+<img src = "./images/image11.png" width="400">
 
-값을 하위로 전달
 
-![값을 상위로 전달](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.44.57.png)
 
-값을 상위로 전달
+| Environment values | Preference values | Container values |
+|----|----|----|
+|<img src = "./images/image12.png" width="300">| <img src = "./images/image13.png" width="300">| <img src = "./images/image14.png" width="300">
+| 아래로 흐름 | 위로 흐름 | 위로 흐르지만 상위 레벨 하나 |
 
-![상위 컨테이너 통해서만 접근 가능](%5BWWDC2024%5D%20Demystify%20SwiftUI%20containers%201c8b3f8f875680d1a353cca427b43a3e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.53.13.png)
 
-상위 컨테이너 통해서만 접근 가능
+Preference values는 현재 레벨에서 모든 상위 레벨의 뷰에 값을 전달하는 Flow up흐름을 가지며 반대로 Environment values는 현재 레벨에서 모든 하위 레벨의 뷰에 값을 전달하는 Flow down의 흐름을 가집니다.
 
-Resolved Subview의 Container Value는 직접 컨테이너를 통해서만 접근할 수 있습니다. 그래서 컨테이너별 맞춤화 옵션을 구현할때 유용합니다.
+마지막으로 우리가 알아볼 Container Values는 Flow up의 흐름을 가지지만 바로 위의 상위 레벨까지만 값을 전달합니다.
 
-1. Container Value 선언하기
+Resolved Subview의 Container Values는 직접 컨테이너를 통해서만 접근할 수 있습니다. 그래서 컨테이너별 맞춤화 옵션을 구현할때 유용합니다.
+
+이 부분은 WWDC 예제가 아닌 직접 테스트 해본 코드로 변경해서 설명드리겠습니다.
+
+1. Container Value 사용하는 방법은 간단합니다.
 
 ```swift
+// 1. ContainerValues를 확장해서 사용하고자 하는 키 값을 @Entry 매크로로 기본값과 함께 선언
 extension ContainerValues {
-	  @Entry var isDisplayBoardCardRejected: Bool = false
+    @Entry var isHighlight: Bool = false
+    @Entry var isBoldFont: Bool = false
 }
 
+// 2. (선택 사항) 사용하기 편하게 View를 확장해 모디파이어를 추가해준다. 그냥 사용해도 무관함
 extension View {
 	  func displayBoardCardRejected(_ isRejected: Bool) -> some View {
 		    containerValue(\.isDisplayBoardCardRejected, isRejected)
@@ -466,53 +469,130 @@ extension View {
 }
 ```
 
-새 API인 Entry 매크로는 environment 값, focus 값 등 SwiftUI 키 저장소 유형에 새 값을 추가할 때 편리한 구문을 제공합니다
+@Entry 매크로는 environment 값, focus 값 등 SwiftUI 키 저장소 유형에 새 값을 추가할 때 편리한 구문을 제공합니다.
 
-1. Container Value 사용하기
+1. ContainerValue를 이용한 Container 내부 구현 로직
 
 ```swift
-struct DisplayBoardSectionContent<Content: View>: View {
-  @ViewBuilder var content: Content
-
-  var body: some View {
-	    DisplayBoardCardLayout {
-		      Group(subviewsOf: content) { subviews in
-			        ForEach(subviews) { subview in
-				          let values = subview.containerValues // ✅ ContainerValue 읽기
-				          CardView(
-					            scale: (subviews.count > 15) ? .small : .normal,
-					            isRejected: values.isDisplayBoardCardRejected // ✅ Flag 전달
-				          ) {
-						            subview
-				          }
-			        }
-		      }
-	    }
-	 }
-}
-
-DisplayBoard {
-	  Section("Matt's Favorites") {
-		    Text("Scrolling in the Deep")
-			      .displayBoardCardRejected(true) // ✅ ContainerValue 값 변경
-		    Text("Born to Build & Run")
-		    Text("Some Body Like View")
-  }
-  Section("Sam's Favorites") {
-	    ForEach(songsFromSam) { song in
-		      Text(song.title)
-			        .displayBoardCardRejected(song.samHasDibs) // ✅ ContainerValue 값 변경
-	    }
-  }
-  Section("Sommer's Favorites") {
-	    ForEach(songsFromSommer) { Text($0.title) }}}
-  }
-  .displayBoardCardRejected(true) // ✅ ContainerValue 값 변경
+struct NewContainerView<Content: View>: View {
+    @ViewBuilder var contents: Content
+    
+    var body: some View {
+        VStack(spacing: 24) {
+            ForEach(sections: contents) { configure in
+                let isSectionHighlight = configure.containerValues.isHighlight
+                let isSectionBoldFont = configure.containerValues.isBoldFont
+                
+                VStack(spacing: .zero) {
+                    /// header
+                    if !configure.header.isEmpty {
+                        configure.header
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .font(.system(size: 20, weight: isSectionBoldFont ? .bold : .regular))
+                            .foregroundStyle(isSectionHighlight ? .red : .black)
+                    }
+                    
+                    /// content
+                    ForEach(subviews: configure.content) { content in
+                        let isBoldFont = content.containerValues.isBoldFont
+                        let isHighlight = content.containerValues.isHighlight
+                        
+                        content
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundStyle(isHighlight ? .red : .black)
+                            .font(.system(size: 16, weight: isBoldFont ? .bold : .regular))
+                    }
+                }
+                .padding()
+                .background(Color.black.opacity(0.02))
+                .clipShape(.rect(cornerRadius: 16))
+            }
+        }
+        .padding()
+    }
 }
 ```
 
-## Quiz시간
+위에서 배웠기도 하고 iOS 18에서 새로 제공된 API인 ForEach(sections:) ForEach(subviews:) 를 사용합니다.
 
-1. **Environment와 Preferences의 플로우가 어떻게 될까요?**
-2. iOS 18 New API 3가지 무엇일까요?
-3. SwiftUI의 선언형 시스템에서 **Declarative subview와 Resolved subviews 차이**
+각각의 클로저에 주어지는 매개변수 타입은 각각 `SectionConfiguration` 와 `Subview` 으로 주어지며 해당 객체의 선언으로 가 적혀있는 주석을 확인해보면 각 내용이 다음과 같습니다.
+
+```swift
+/// An opaque value representing a subview of another view.
+///
+/// Access to a `Subview` can be obtained by using `ForEach(subviews:)` or
+/// `Group(subviews:)`.
+///
+/// Subviews are proxies to the resolved view they represent, meaning
+/// that modifiers applied to the original view will be applied before
+/// modifiers applied to the subview, and the view is resolved
+/// using the environment of its container, *not* the environment of the
+/// its subview proxy. Additionally, because subviews must represent a
+/// single leaf view, or container, a subview may represent a view after the
+/// application of styles. As such, attempting to apply a style to it may
+/// have no affect.
+@available(iOS 18.0, macOS 15.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+public struct Subview : View, Identifiable {
+
+    /// The container values associated with the given subview.
+    public var containerValues: ContainerValues { get }
+		...
+}
+```
+
+```swift
+/// Here, we want to create one view for `PinboardSectionsLayout` to place per
+/// section in content. To do that, we surround the `ForEach` body in another
+/// container, a `VStack` layout, ensuring the different subviews of
+/// section.content are treated as a single view by the surrounding layout.
+/// Additionally, surrounding the header and footer in an `HStack` layout
+/// avoids vertically stacking subviews of the header and footer
+/// which we want visually grouped together.
+@available(iOS 18.0, macOS 15.0, tvOS 18.0, watchOS 11.0, visionOS 2.0, *)
+public struct SectionConfiguration : Identifiable {
+
+		/// The container values associated with the given section.
+    ///
+    /// Only explicitly created sections are able to have container values,
+    /// meaning this container values will be empty if the section is implicit.
+    public var containerValues: ContainerValues { get }
+		...
+}
+```
+
+위 주석들에서 읽어볼 수 있듯이  각 타입은 containerValues에 접근해 하위레벨의 뷰에서 설정한 키 값에 따라 상위 레벨의 컨테이너에서 뷰를 유연하게 구성할 수 있습니다.
+
+1. Container View 객체 생성 및 ContainerValue 설정
+
+```swift
+    NewContainerView {
+        Section("첫 섹션") {
+            Text("첫 번째 컴포넌트")
+                .highlight(true) // SubView Container 통해서만 접근 가능한 ContainerValue
+                .setBold(true) // SubView Container 통해서만 접근 가능한 ContainerValue
+        }
+        .highlight(true) // Section Container 통해서만 접근 가능한 ContainerValue
+        
+        Section("두 번째 섹션") {
+            Text("두 번째 컴포넌트")
+                .highlight(true)
+                .setBold(true)
+        }
+        
+        VStack(spacing: .zero) { // SubView Container 통해서만 접근 가능한 ContainerValue
+            Text("세 번째 컴포넌트") // VStack Container로 감싸서 NewContainerView의 Subview가 아니므로 ContainerValue를 설정해줘도 동작 안함
+                .setBold(true)
+                .highlight(true)
+        } // 여기에 모디파이어 추가해서 ContainerValue 변경해주면 동작함
+//        .setBold(true)
+        
+        Text("네 번째 컴포넌트")
+            .highlight(false)
+        Text("다섯 번째 컴포넌트")
+            .highlight(true)
+    }
+```
+
+Container Vlaue 적용 코드 결과 화면
+
+<img src = "./images/image16.png" width="300">
