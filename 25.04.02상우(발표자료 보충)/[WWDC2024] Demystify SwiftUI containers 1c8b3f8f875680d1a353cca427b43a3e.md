@@ -1,3 +1,5 @@
+
+
 # [WWDC2024] Demystify SwiftUI containers
 
 iOS 18 상위 버전에서 컬렉션 관련된 커스텀뷰나 컴포넌트를 만들때 자주 사용되는
@@ -7,6 +9,22 @@ Group에서 새로 제공되는 이니셜라이저 Group(contentsOf:)가 궁금�
 Container View는 Trailing View Builder Closure로 콘텐츠를 래핑합니다.
 
 우리가 알고있는 List Container View 또한 마찬가지입니다.
+
+## 목차
+  - [List 기본 사용법](#list-기본-사용법)
+    - [클로저에 하드코딩 하는 방법 (정적)](#클로저에-하드코딩-하는-방법-정적)
+    - [배열과 ForEach를 사용하는 방법 (동적)](#배열과-foreach를-사용하는-방법-동적)
+  - [List 고급?기능](#list-고급기능)
+    - [섹션으로 그룹화](#섹션으로-그룹화)
+  - [유연한 커스텀 컨테이너 뷰 만들기](#유연한-커스텀-컨테이너-뷰-만들기)
+    - [Composition](#composition)
+    - [✅iOS 18 New API - ForEach(subviewOf:)](#ios-18-new-api---foreachsubviewof)
+    - [✅iOS 18 New API - Group(subviewOf:)](#ios-18-new-api---groupsubviewof)
+  - [Section](#section)
+  - [Customization](#customization)
+    - [✅ iOS 18 New API - Container Value 공식문서](#ios-18-new-api---container-value-공식문서)
+<br>
+<br>
 
 ## List 기본 사용법
 
