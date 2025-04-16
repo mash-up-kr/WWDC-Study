@@ -46,7 +46,7 @@ Swift 매크로를 활용한 @Observable 하나만으로 우리 FoodTruckModel �
 
 @Observable은 Swift 컴파일러에 명령을 내려서 여러분이 작성한 모델 코드를 Observable 타입으로 확장 가능합니다.
 
-<img src = "./images/image1.png" width = "400">
+<img src = "./images/image1.png" width = "75%">
 
 FoodTruckModel모델의 도넛 목록을 보여주는 간단한 예시입니다.
 
@@ -68,9 +68,9 @@ Add New donut 버튼을 누르면 donuts 배열에 새로운 도넛 추가 →
 
 **즉, body 외에 어딘가에서 같은 모델의 인스턴스를 가지고 orders를 변경해도 DonutMenu는 뷰를 다시 그리지 않습니다.**
 
-<img src = "./images/image2.png" width = "400">
+<img src = "./images/image2.png" width = "75%">
 
-<img src = "./images/image3.png" width = "400">
+<img src = "./images/image3.png" width = "75%">
 
 @Obsrvable로 관리하는 FoodTruckModel에 orderCount 연산 프로퍼티를 추가하고 orderCount를 사용해 뷰를 그려보겠습니다.
 
@@ -101,7 +101,7 @@ SwiftUI로 UI를 그릴때 @Observable과 함께 사용하면 좋은 Property wr
 
 model안에 view 전용 상태를 저장해야할 때 사용합니다.
 
-<img src = "./images/image4.png" width = "400">
+<img src = "./images/image4.png" width = "75%">
 
 ## @Environment
 
@@ -109,7 +109,7 @@ Environment는 각 값을 어디에서든 접근 할 수 있게 해줍니다. �
 
 Observable타입과 아주 잘 맞는데 그 이유는 Observable이 접근을 추적해서 UI를 업데이트 해주기 때문에 일관성이 지켜져서 여러 곳에서 공유할때 아주 좋다고 합니다!
 
-<img src = "./images/image5.png" width = "400">
+<img src = "./images/image5.png" width = "75%">
 
 +) Environment에서는 더욱 성능향상을 가져가지 않을까 생각합니다. 여러 하위 뷰에 공유된 상황에 프로퍼티가 업데이트 된다고 모든 뷰를 업데이트하는 것보다 body에서 접근하는 View만 업데이트해서 성능면에 아주 👍
 
@@ -119,7 +119,7 @@ Observable타입과 아주 잘 맞는데 그 이유는 Observable이 접근을 �
 - 해당 타입으로부터 바인딩이 생성되게 하는 기능만 존재 → 굉장히 가벼움
 - @Bindable을 프로퍼티 앞에 붙이기
 
-<img src = "./images/image6.png" width = "400">
+<img src = "./images/image6.png" width = "75%">
 
 TextField에서 바인딩객체가 필요합니다.
 
@@ -141,7 +141,7 @@ SwiftUI의 Observable 모델을 사용하는데 있어서 대답해야 할 질�
 
 OservableObject와는 다르게 배열과 옵셔널도 사용할 수 있으며 @Observable이 포함된 어느 타입이든 사용이 가능 합니다.
 
-<img src = "./images/image7.png" width = "400">
+<img src = "./images/image7.png" width = "75%">
 
 ObsrvableObject를 배열 or 옵셔널로 사용하려는 경우 에러 발생
 
@@ -179,16 +179,16 @@ WWDC에서는 아래와 같은 경우 사용하라고 말합니다.
 
 이 경우 프로퍼티에 접근과 변경이 언제 이루어졌는지 Observation에 전달해주기만 하면 됩니다.
 
-<img src = "./images/image8.png" width = "400">
+<img src = "./images/image8.png" width = "75%">
 
-<img src = "./images/image9.png" width = "400">
+<img src = "./images/image9.png" width = "75%">
 
 - access(_: keyPath:)로 접근 시점 Observation에게 전달
 - willSet(_: keyPath:)로 값 변경시점 직전에 호출
 - didSet(_: keyPath:)로 값 변경시점 직후에 호출
 - withMutation(_: keyPath:, )을 통해 변경시점을 Observation에게 전달 → 변경 이전에 willSet 호출하고 변경 후 didSet을 호출
 
-<img src = "./images/image10.png" width = "400">
+<img src = "./images/image10.png" width = "75%">
 
 곧 예제 앱을 통해 보겠지만 아래 코드와 같이 구현해주면 정상적으로 동작했습니다.
 
@@ -261,7 +261,7 @@ extension ManualObservableModel {
 - withObservationTracking API가 내부적으로 추가되서 변경된 프로퍼티를 감지하고 업데이트
 - 일반 개발자가 직접 쓸 필요는 없고, Swift의 @Observable 매크로 안에서 자동으로 사용
 
-<img src = "./images/image11.png" width = "400">
+<img src = "./images/image11.png" width = "75%">
 
 ## ObservableObject
 
@@ -269,21 +269,21 @@ extension ManualObservableModel {
 
 ObservableObject 사용하는 경우의 Model 또는 ViewModel Code
 
-<img src = "./images/image12.png" width = "400">
+<img src = "./images/image12.png" width = "75%">
 
 @Observable 매크로를 사용하는 경우 Model 또는 ViewModel Code
 
-<img src = "./images/image13.png" width = "400">
+<img src = "./images/image13.png" width = "75%">
 
 ObservableObject를 채택할 필요도 관찰할 프로퍼티에 @Published를 붙일 필요도 없어졌습니다.
 
 ObservableObject로 사용하는경우 View Code
 
-<img src = "./images/image14.png" width = "400">
+<img src = "./images/image14.png" width = "75%">
 
 @Observable 매크로를 사용하는경우 View Code
 
-<img src = "./images/image15.png" width = "400">
+<img src = "./images/image15.png" width = "75%">
 
 프로퍼티 래퍼가 줄어드는걸 볼 수 있습니다!!
 
