@@ -2,7 +2,7 @@
 
 ## Static / Dynamic Library
 
-![스크린샷 2025-04-06 오후 7.40.16.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.40.16.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-06_오후_7.40.16.png">
 
 - 여러 개의 오브젝트 파일(`.o` )을 하나로 묶은 파일
 - 정적 라이브러리를 앱에 링크하면, **해당 라이브러리의 코드가 앱 바이너리에 복사**
@@ -10,7 +10,7 @@
     - 정적 라이브러리의 코드가 바뀌거나 더 많은 라이브러리를 사용할수록 빌드 성능 **↓**
     - 런타임에 외부 라이브러리를 로드할 필요 없음 → 앱 실행이 빠름
 
-![스크린샷 2025-04-06 오후 7.41.49.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.41.49.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-06_오후_7.41.49.png">
 
 - Xcode에서 프레임워크 타겟에 사용되는 바이너리 파일 형식
 - 코드는 실행 파일로 복사되지 않고 해당 라이브러리의 설치 경로만 앱 바이너리에 기록해둠
@@ -25,7 +25,7 @@
 
 ## Mergeable Library?
 
-![스크린샷 2025-04-06 오후 7.47.46.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.47.46.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-06_오후_7.47.46.png">
 
 Mergeable 라이브러리는 정적 링크와 동적 링크 방식의 장점을 모두 가져옴
 
@@ -50,7 +50,7 @@ Xcode에서 앱을 빌드할 때, 해당 라이브러리의 **코드를 앱 바�
 
 병합된 후에는 원래 라이브러리 파일이 앱 번들에서 **제거될 수 있음**
 
-![스크린샷 2025-04-06 오후 9.51.16.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.51.16.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-06_오후_9.51.16.png">
 
 ```swift
 ForestApp
@@ -85,7 +85,7 @@ ForestApp
 
 Mergeable 라이브러리의 병합 과정이 정적 라이브러리랑 같다면, 빌드 속도도 다시 느려지는 것 아닌가?
 
-**→ ✅ Debug 모드에서는 `merge`가 아니라 `reexport` 방식으로 처리**
+**→ ✅ Debug 모드에서는 `merge`가 아니라 `reexport` 방식으로 처리**
 
 - 병합된 프레임워크 하나만 링크
     - 예를 들어 앱이 `ForestKit` 하나만 링크했는데,
@@ -160,7 +160,7 @@ Other Linker Flags: -Wl,-no_exported_symbols
 
 ### 특정 symbol만 export해야 할 때 — Exported Symbols File
 
-![스크린샷 2025-04-06 오후 9.55.34.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-06_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_9.55.34.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-06_오후_9.55.34.png">
 
 앱 익스텐션이나 외부에서 호출되는 진입점이 필요한 경우, 일부 심볼만 예외적으로 export해야 하는 경우도 있음
 
@@ -176,7 +176,7 @@ General > Linking > Exported Symbols File
 
 ### 기존 실행 파일/모듈이 mergeable 라이브러리에 의존하는 경우
 
-![스크린샷 2025-04-07 오전 1.02.37.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.02.37.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.02.37.png">
 
 : 병합된 라이브러리는 디스크에서 제거되므로, **기존에 해당 프레임워크를 직접 참조하던 실행 파일**은
 
@@ -184,14 +184,14 @@ General > Linking > Exported Symbols File
 
 ### Autolinking 사용 중일 때
 
-![스크린샷 2025-04-07 오전 1.03.31.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.03.31.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.03.31.png">
 
 - Swift 컴파일러는 import 문만으로도 자동으로 해당 프레임워크를 링크 (Autolinking)
 - 병합된 프레임워크를 쓰는 경우엔, **명시적으로 병합된 프레임워크만 링크하도록 설정**해야 문제가 발생하지 않음
 
 ### dlopen, NSBundle 등 런타임 로딩 API 사용 시
 
-![스크린샷 2025-04-07 오전 1.08.29.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.08.29.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.08.29.png">
 
 - `dlopen`, `Bundle.module`, `NSBundle.bundle(for:)` 같은 API는
     
@@ -217,7 +217,7 @@ General > Linking > Exported Symbols File
 
 ### 병합된 프레임워크를 외부에 배포할 때
 
-![스크린샷 2025-04-07 오전 1.10.39.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.10.39.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.10.39.png">
 
 - `-make_mergeable` 옵션으로 빌드된 프레임워크에는 **병합용 메타데이터가 포함됨**
     - 메타데이터가 포함되므로 **dylib 크기는 커지지만**,
@@ -227,7 +227,7 @@ General > Linking > Exported Symbols File
 
 ### 기존 정적 라이브러리도 가능하면 동적으로 바꾸고 병합하도록 권장
 
-![스크린샷 2025-04-07 오전 1.12.17.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.12.17.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.12.17.png">
 
 - 정적 라이브러리는 병합 자체가 안 됨 (이미 앱 바이너리에 복사되기 때문)
 - 동적 + 병합 으로 만들면:
@@ -239,4 +239,4 @@ General > Linking > Exported Symbols File
 
 ## 정리
 
-![스크린샷 2025-04-07 오전 1.13.25.png](WWDC23%20-%20Meet%20mergeable%20libraries/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2025-04-07_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_1.13.25.png)
+<img src="./WWDC23 - Meet mergeable libraries/스크린샷_2025-04-07_오전_1.13.25.png">
